@@ -2,7 +2,6 @@
 A collection of various PyQt4 resources.
 
 ## Utilities
-Import the module:
 ```python
 from qt import util
 ```
@@ -26,7 +25,7 @@ util.**scrollBufferToStart**(*buffer*)
 
 util.**scrollBufferToEnd**(*buffer*)
 
-Scrolls a widget text buffer to specified position
+Scrolls a text buffer widget to a specified position.
 ```python
 b = QtGui.QPlainTextEdit()
 util.scrollToEnd(b)
