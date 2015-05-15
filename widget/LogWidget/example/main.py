@@ -5,24 +5,21 @@ __email__     = "ryon.sherman@gmail.com"
 __copyright__ = "Copyright 2015, Ryon Sherman"
 __license__   = "MIT"
 
+# define log format
+LOG_FORMAT = "[%(asctime)s] (%(levelname)s) %(message)s"
+
 import sys
 import time
 import random
 import logging
 
-from qt.log import log
+from PyQt4 import QtCore, QtGui
 from qt.widget.LogWidget import LogWidget
 
+# get root logger
+log = logging.getLogger()
 # set root logging level
 log.setLevel(logging.DEBUG)
-# define log format
-log_format = "[%(asctime)s] (%(levelname)s) %(message)s"
-# get log handler
-log_handler = log.handlers[0]
-# set log handler format
-log_handler.setFormatter(logging.Formatter(log_format))
-
-from PyQt4 import QtCore, QtGui
 
 # initialize application
 app = QtGui.QApplication(sys.argv)
@@ -30,6 +27,7 @@ app = QtGui.QApplication(sys.argv)
 # initialize widget
 widget = LogWidget()
 widget.setFixedSize(600, 400)
+widget.handler.setFormatter(logging.Formatter(LOG_FORMAT))
 
 # initialize window with widget
 window = QtGui.QMainWindow()

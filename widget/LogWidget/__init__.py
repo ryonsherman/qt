@@ -10,9 +10,11 @@ import logging
 from StringIO import StringIO
 from PyQt4 import QtCore, QtGui
 
+
 # define qt log buffer object
 class QLogBuffer(QtCore.QObject, StringIO):
-    # define buffer signal
+    """ A StringIO buffer that emits a pyqtSignal """
+    # define buffer change signal
     signal = QtCore.pyqtSignal(str)
 
     def __init__(self, *args, **kwargs):
@@ -24,25 +26,11 @@ class QLogBuffer(QtCore.QObject, StringIO):
     def write(self, data):
         # require data
         if not data: return
-        # emit unicode data to signal
+        # emit buffer change signal with unicoded data
         self.signal.emit(unicode(data))
         # write buffer
         StringIO.write(self, data)
 
-# get global logger
-log = logging.getLogger()
-# set root logging level
-log.setLevel(logging.DEBUG)
-# define log format
-log_format = "[%(asctime)s] (%(levelname)s) %(message)s"
-# initialize log buffer
-log_buffer = QLogBuffer()
-# initialize log handler
-log_handler = logging.StreamHandler(log_buffer)
-# set log handler format
-log_handler.setFormatter(logging.Formatter(log_format))
-# add buffer handler to logger
-log.addHandler(log_handler)
 
 # define log output widget
 class LogWidget(QtGui.QPlainTextEdit):
@@ -51,8 +39,16 @@ class LogWidget(QtGui.QPlainTextEdit):
         # initialize widget
         QtGui.QPlainTextEdit.__init__(self, *args, **kwargs)
 
+        # initialize log buffer
+        self.buffer = QLogBuffer()
+        # initialize log buffer handler
+        self.handler = logging.StreamHandler(self.buffer)
+
+        # add buffer handler to global logger
+        logging.getLogger().addHandler(self.handler)
+
         # connect to log buffer output
-        log_buffer.signal.connect(self.onLogBufferChanged)
+        self.buffer.signal.connect(self.onLogBufferChanged)
         # set output to read only
         self.setReadOnly(True)
 

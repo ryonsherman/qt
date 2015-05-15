@@ -7,8 +7,6 @@ Import the module:
 from qt import util
 ```
 
----
-
 util.**hex2QColor**(*color*)
 
 Converts a string hexadecimal value to a [QtGui.QColor](http://pyqt.sourceforge.net/Docs/PyQt4/qcolor.html) object.
