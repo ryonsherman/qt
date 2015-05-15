@@ -20,13 +20,7 @@ def hex2QColor(c):
 
 def scrollBuffer(buf, pos):
     """ Scroll text buffer to position """
-    # get current buffer text cursor
-    cursor = buf.textCursor()
-    # move cursor to specified position
-    cursor.movePosition(pos)
-    # set buffer text cursor
-    buf.setTextCursor(cursor)
-    # ensure buffer cursor is visible
+    buf.moveCursor(pos)
     buf.ensureCursorVisible()
 
 def scrollToStart(buf):
@@ -36,3 +30,4 @@ def scrollToStart(buf):
 def scrollToEnd(buf):
     """ Scroll to end of buffer """
     return scrollBuffer(buf, QtGui.QTextCursor.End)
+
