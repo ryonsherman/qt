@@ -11,7 +11,6 @@ from StringIO import StringIO
 from PyQt4 import QtCore, QtGui
 
 
-# define qt log buffer object
 class QLogBuffer(QtCore.QObject, StringIO):
     """ A StringIO buffer that emits a pyqtSignal """
     # define buffer change signal
@@ -32,7 +31,6 @@ class QLogBuffer(QtCore.QObject, StringIO):
         StringIO.write(self, data)
 
 
-# define log output widget
 class LogWidget(QtGui.QPlainTextEdit):
     """ A QPlainTextEdit widget to provide logging output """
     def __init__(self, *args, **kwargs):
