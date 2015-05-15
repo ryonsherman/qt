@@ -1,0 +1,1 @@
+![LogWidget](https://github.com/ryonsherman/qt/blob/master/widget/LogWidget/LogWidget.png)
