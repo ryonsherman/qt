@@ -6,13 +6,17 @@ LogWidget is a [QtGui.QPlainTextEdit](http://pyqt.sourceforge.net/Docs/PyQt4/qpl
 
 **Example**
 ```python
+#!/usr/bin/env python2
+
 import sys
 from qt.widget.LogWidget import LogWidget
 
 app = QtGui.QApplication(sys.argv)
+
 widget = LogWidget()
 widget.setFixedSize(600, 400)
 widget.show()
+
 sys.exit(app.exec_())
 ```
 
