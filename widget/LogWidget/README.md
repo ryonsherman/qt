@@ -11,8 +11,6 @@ import sys
 import logging
 
 from PyQt4 import QtGui
-
-from qt.log import log
 from qt.widget.LogWidget import LogWidget
 
 app = QtGui.QApplication(sys.argv)
@@ -21,8 +19,8 @@ widget = LogWidget()
 widget.setFixedSize(600, 400)
 widget.show()
 
-log.setLevel(logging.DEBUG)
-log.debug("Log message")
+logging.setLevel(logging.DEBUG)
+logging.debug("Log message")
 
 sys.exit(app.exec_())
 ```
