@@ -26,4 +26,4 @@ log.debug("Log message")
 sys.exit(app.exec_())
 ```
 
-![LogWidget](https://github.com/ryonsherman/qt/blob/master/widget/LogWidget/widget.png)
+[![LogWidget](https://github.com/ryonsherman/qt/blob/master/widget/LogWidget/widget.png)](https://github.com/ryonsherman/qt/blob/master/widget/LogWidget/__init__.py)
