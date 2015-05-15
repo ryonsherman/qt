@@ -17,8 +17,6 @@ Converts a string hexadecimal value to a [QtGui.QColor](http://pyqt.sourceforge.
 (17, 34, 51)
 ```
 
----
-
 util.**scrollBuffer**(*buffer*, *position*)
 
 util.**scrollBufferToStart**(*buffer*)
