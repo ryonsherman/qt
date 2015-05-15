@@ -2,9 +2,12 @@
 A collection of various PyQt4 utilities and widgets
 
 ## Utilities
+Import the module:
 ```python
 from qt import util
 ```
+
+---
 
 util.**hex2QColor**(*color*)
 
@@ -12,11 +15,12 @@ Converts a string hexadecimal value to a [QtGui.QColor](http://pyqt.sourceforge.
 ```python
 >>> util.hex2QColor('#112233')
 <PyQt4.QtGui.QColor object at 0x7f16a5502668>
-
 >>> c = util.hex2QColor('#112233')
 >>> c.red(), c.green(), c.blue()
 (17, 34, 51)
 ```
+
+---
 
 util.**scrollBuffer**(*buffer*, *position*)
 
@@ -28,7 +32,7 @@ Scrolls a widget text buffer to specified position
 ```python
 b = QtGui.QPlainTextEdit()
 util.scrollToEnd(b)
-self.insertPlainText(text)
+b.insertPlainText(text)
 ```
 
 ## Widgets
