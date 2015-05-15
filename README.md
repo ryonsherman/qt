@@ -1,5 +1,5 @@
-# Qt Toolbox
-A collection of various PyQt4 utilities and widgets
+# Qt Resources
+A collection of various PyQt4 resources.
 
 ## Utilities
 Import the module:
@@ -36,4 +36,4 @@ b.insertPlainText(text)
 ```
 
 ## Widgets
-* [widget.**LogWidget**](https://github.com/ryonsherman/qt/tree/master/widget/LogWidget) - provides real-time, auto-scrolling, Python [logging](https://docs.python.org/2/library/logging.html) output
+* [widget.**LogWidget**](https://github.com/ryonsherman/qt/tree/master/widget/LogWidget) – provides real-time, auto-scrolling, Python [logging](https://docs.python.org/2/library/logging.html) output
