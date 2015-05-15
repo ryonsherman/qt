@@ -1,7 +1,6 @@
 # Widgets
 A collection of PyQt4 widgets.
 
-Import a widget:
 ```python
 from qt.widget.widgetName import widgetName
 ```

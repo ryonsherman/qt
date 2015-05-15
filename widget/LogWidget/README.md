@@ -1,3 +1,4 @@
+## LogWidget
 LogWidget is a [QtGui.QPlainTextEdit](http://pyqt.sourceforge.net/Docs/PyQt4/qplaintextedit.html) widget that provides real-time, auto-scrolling, Python [logging](https://docs.python.org/2/library/logging.html) output.
 
 1. [log.QLogBuffer](https://github.com/ryonsherman/qt/blob/master/log.py) provides a [StringIO](https://docs.python.org/2/library/stringio.html) buffer handled by [logging.StreamHandler](https://docs.python.org/2/library/logging.handlers.html#streamhandler).
