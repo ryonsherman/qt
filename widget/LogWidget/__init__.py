@@ -25,7 +25,7 @@ class LogWidget(QtGui.QPlainTextEdit):
     def onLogBufferChanged(self, data):
         """ Updates widget output on log buffer change """
         # scroll output to end of buffer
-        util.scrollToEnd(self)
+        util.scrollBufferToEnd(self)
         # append log data to output
         self.insertPlainText(data)
 

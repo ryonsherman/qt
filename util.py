@@ -23,11 +23,11 @@ def scrollBuffer(buf, pos):
     buf.moveCursor(pos)
     buf.ensureCursorVisible()
 
-def scrollToStart(buf):
+def scrollBufferToStart(buf):
     """ Scroll to start of buffer """
     return scrollBuffer(buf, QtGui.QTextCursor.Start)
 
-def scrollToEnd(buf):
+def scrollBufferToEnd(buf):
     """ Scroll to end of buffer """
     return scrollBuffer(buf, QtGui.QTextCursor.End)
 
